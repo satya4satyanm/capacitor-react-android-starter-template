@@ -1,0 +1,7 @@
+{
+    "name": "Quick Shopping",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

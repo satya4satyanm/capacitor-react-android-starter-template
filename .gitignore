@@ -1,0 +1,12 @@
+node_modules
+android
+build
+
+*.zip
+
+*.apk
+
+*.webm
+set*
+~*
+.DS_Store
