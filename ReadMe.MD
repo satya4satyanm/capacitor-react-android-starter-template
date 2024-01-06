@@ -1,9 +1,3 @@
-# Simple React To-Do List
-
-This is a simple To-Do List app written in React.
-
-
-# Artifacts to share on youtube
 
 Uploaded APK
 Project link on gitlab: https://gitlab.com/youtube64/grocery-app
@@ -24,58 +18,21 @@ Make sharing easy with in app
 
 # Generating android apk
 
-QUICK ANDROID APP
-                By Satya
-Quick Android App
-
-   There is no need of android license key
-   when you want to build an app for your
-   own phone for personal use…
-
-
-
-   And of course, you can distribute it to
-   your friends and relatives
-
-
-
-   Let’s start
-Quick Android App
-
-   Prerequisites
-
    • Visual Studio Code for a quick JavaScript/React/Angular App
    • Android Studio
 
-
-
-
-   Go for it now…
-Quick Android App
-
-   I am using a simple react `Quick Shopping` app
-   which I customized to make my grocery
-   shopping experience easy…
-
-
-
-
    Here is the app url:
-   https://codesandbox.io/s/simple-react-todo-list-
-   mo0g05
+   https://codesandbox.io/s/simple-react-todo-list-mo0g05
 
 
    Next..
-Quick Android App
-
    Let me create a
-   file capacitor.config.json in the root
-   folder
+   file capacitor.config.json in the root folder
 
    Add below code into it:
    {
-   "appId": "io.ionic.yourAppName",
-   "appName": " yourAppName ",
+   "appId": "io.ionic.todo",
+   "appName": "Quick Shopping",
    "bundledWebRuntime": false,
    "npmClient": "npm",
    "webDir": "build",
@@ -85,10 +42,7 @@ QUICK ANDROID APP
 
 
    Next..
-Quick Android App
-
-   Let me create a file ionic.config.json in
-   the root folder
+   Let me create a file ionic.config.json in the root folder
 
 
    Add below code into it:
@@ -102,126 +56,47 @@ QUICK ANDROID APP
 
 
    Next..
-Quick Android App
-
    If you are using react app
-
-
 
    Run below command in command prompt
    `npm run build`
 
-
-   Command prompt is opened at the root of react project
-
-   Make sure the app runs locally
-
-
    Next..
-Quick Android App
-
-   Install CAPACITOR locally by running
-   below command in command prompt
-
-
-   Run below commands in command prompt
-
+   Install CAPACITOR locally
 
    •    `npm install @capacitor/core`
    •    `npm install @capacitor/cli --save-dev`
    •    `npx cap init`
 
-
-   Using the same command prompt which was opened at the root of react project
-
-
-
-
    Next..
-Quick Android App
-
    Make sure android studio is installed
-
-
-
-   Run below command in command prompt
    `ionic capacitor add android`
-
 
    This will create the android folder in our project root
 
-   * Using the same command prompt which was opened at the root of react project
-
 
    Next..
-Quick Android App
-
    To open the project in android studio
-
-
-
-   Run below command in command prompt
    `npx cap open android`
 
-
-   This will open the project in android studio IDE
-
-   * Using the same command prompt which was opened at the root of react project
-
-
    Next..
-
+   `ionic capacitor sync` if the app is not updated, 
+   
+   then
    `npx cap sync`
-   `ionic capacitor sync` if the app is not updated
-Quick Android App
-
+   
+   Next..
    Now we are in Android Studio
-
-
-
    Run the project once it is initiated
-
-
    Now, goto the build menu and select
    `Build bundles/apks - Build apks`
 
 
-
-   Next..
-Quick Android App
-
-   Now we have our APK ready to be run in
-   our smart phone
-
-
-   Locate the build folder on your system
-
-   Send the APK to your phone using whats-app web or
-   any other technique
-
-   Install the app and its ready to use…
-Quick Android App
-
-   Don’t forget to like..
-   Let me know what else you are looking
-   for in comments…
-
-
-   in the description
-   • Attached the APK file
-   • Given the project link on gitlab
-
-
-   Thank you
-
+Capacitor
+Icon and splash generator https://capacitorjs.com/docs/guides/splash-screens-and-icons 
+`npx capacitor-assets generate`
 
 https://gitlab.com/youtube64/grocery-app
-
-
-1. split and empty check
-2. Don't remove items check checked
-3. 
-
 
 
 

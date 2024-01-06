@@ -8,6 +8,8 @@ export function Dashboard() {
     const [selectedgroup, setSelectedGroup] = useState(null);
     const [listName, setListName] = useState('');
     const [privacy, setPrivacy] = useState(false);
+    const [conf, setConfirm] = useState('');
+    const [ itemToDelete, setItemToDelete] = useState({});
 
     const [lsLists, setLSLists] = useState(
         JSON.parse(localStorage.getItem("lsLists")) || []
@@ -31,9 +33,17 @@ export function Dashboard() {
     }
 
     const onRemove = (data) => {
-        // console.log(data.value, data.id)
-        const tempArr = lsLists.filter(prop => prop.name !== data.value && prop.id !== data.id);
-        setLSLists(tempArr);
+        console.log(data.value, data.id)
+        let i = lsLists.filter(function(obj){
+            return obj.name===data.value;
+            });
+            setItemToDelete(i[0]);
+        if(i[0].items.length) {
+            setConfirm(`${data.value} - has ${i[0].items.length} item(s) in it. Are you sure to delete it?`);
+        } else {
+            const tempArr = lsLists.filter(prop => prop.name !== data.value && prop.id !== data.id);
+            setLSLists(tempArr);
+        }
     }
 
     const updateGrpWithListItems = (grp, list) => {
@@ -49,12 +59,17 @@ export function Dashboard() {
         <button onClick={createList}>Create Shopping</button>
 
         <div className="list-c">
+            {
+                !lsLists.length && <p>
+                    Enter a shopping group name, tap the Create Shopping button and tap it to add items.
+                </p>
+            }
             {lsLists.map((list, index) => {
                 return (<div key={index} className="list-names"><span onClick={loadList} data-value={list.name} data-id={list.id}>{list.name} ({list.items.length})</span>
                     <img
                         className="remove"
                         align="right"
-                        src="remove.png"
+                        src="../assets/remove.png"
                         width="20"
                         alt="remove"
                         data-value={list.name}
@@ -73,6 +88,28 @@ export function Dashboard() {
 
         {
             selectedgroup && <div className="popup"><App close={() => setSelectedGroup(null)} grp={selectedgroup} updateGrpWithListItems={updateGrpWithListItems}></App></div>
+        }
+
+
+        {
+            conf !=='' && (<div className="popup conf">{conf}
+                <button onClick={()=>{
+                    const tempArr = lsLists.filter(prop => {
+                        return prop.name !== itemToDelete.value && prop.id !== itemToDelete.id
+                    });
+                    setLSLists(tempArr);
+                    setItemToDelete({});
+                    setConfirm('');
+                }}>
+                    <span>Delete</span>
+                </button>
+                <button onClick={()=>{
+                    setItemToDelete({});
+                    setConfirm('');
+                }}>
+                    <span>Cancel</span>
+                </button>
+            </div>)
         }
 
         <div className="footer" onClick={()=>{setPrivacy(true)}}>Privacy Policy & Help</div>

@@ -1,5 +1,8 @@
 QUICK ANDROID APP
                 By Satya
+
+                On Mac make sure you have Java 17 
+
 Quick Android App
 
    There is no need of android license key
@@ -48,8 +51,8 @@ QUICK ANDROID APP
 
    Add below code into it:
    {
-   "appId": "io.ionic.yourAppName",
-   "appName": " yourAppName ",
+   "appId": "io.ionic.todo",
+   "appName": " Quick Shopping ",
    "bundledWebRuntime": false,
    "npmClient": "npm",
    "webDir": "build",
@@ -187,3 +190,55 @@ QUICK ANDROID APP
 
 
 https://gitlab.com/youtube64/grocery-app
+
+
+
+
+https://developers.google.com/admob/android/quick-start
+Admob setup
+
+1. Under Android folder in VSCode
+   Check for build.gradle file
+   include Google's Maven repository and Maven central repository in both your buildscript and allprojects sections:
+
+2. implementation 'com.google.android.gms:play-services-ads:22.6.0'
+
+3. Goto app src main
+   Open AndroidManifest.xml  inside application tag
+   Add <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-3940256099942544~3347511713"/>
+4. in app src main java io ionic todo
+   Open MainActivity under app java todo
+   Initialize the Google Mobile Ads SDK
+5. in AS - androidManifest the APPLICATION_ID should use admob app id
+
+Used https://www.npmjs.com/package/@capacitor-community/admob
+
+Change the icons if needed in android - app - src - main - res
+
+Change the version in 
+android - app - build.gradle
+android - app - capacitor-cordova-android-plugins - build.gradle
+
+
+In android - app - src - main - AndroidManifest.xml
+Add inside application tag 
+<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3343385617948229~8856451882"
+        />
+
+
+No change in MainActivity.java file
+
+
+aab file for playConsole will be generated under android - app - release folder
+
+in Android - build.gradle file
+Capacitor adds this already 
+repositories {
+        google()
+        mavenCentral()
+    }
+

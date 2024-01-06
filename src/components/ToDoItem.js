@@ -6,7 +6,7 @@ function ToDoItem(props) {
     <div className="items">
       <li>
         <img
-          src={ props.text.checked ? "tick.png" : "empty.png" }
+          src={ props.text.checked ? "../assets/tick.png" : "../assets/empty.png" }
           alt="tick"
           width="30"
           onClick={() => {
@@ -17,7 +17,7 @@ function ToDoItem(props) {
         {<img
           className="remove"
           align="right"
-          src="remove.png"
+          src="../assets/remove.png"
           width="20"
           alt="remove"
           onClick={() => {
