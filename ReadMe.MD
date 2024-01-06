@@ -2,6 +2,8 @@
 Uploaded APK
 Project link on gitlab: https://gitlab.com/youtube64/grocery-app
 
+Source Code in github : https://github.com/satya4satyanm/capacitor-react-android-starter-template
+
 you tube url
 # https://youtu.be/l_yQwqJjZ28
 
